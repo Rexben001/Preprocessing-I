@@ -144,3 +144,12 @@ nav ul li {
   margin: 30px;
   font-size: 1.3rem;
 }
+#first-section {
+  background-color: #cfcece;
+  margin: 30px;
+  padding: 30px;
+}
+#first-section img {
+  width: 50%;
+  height: auto;
+}
