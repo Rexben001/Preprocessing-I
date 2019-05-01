@@ -11,6 +11,7 @@ html, body {
 	height: 100%;
 	max-width: 800px;
 	margin: 0 auto;
+	color: lighten(black, 30%);
 }
 
 nav ul{
@@ -18,17 +19,37 @@ nav ul{
 	justify-content: flex-end;
 
 	li{
-		margin:@defaultSpacing;
+		margin: 30px 30px 10px;
 		font-size: 1.3rem;
 	}
 }
 
 #first-section{
-	background-color: rgb(207, 206, 206);
+	background-color: #f2f3f7;
 	margin:@defaultSpacing;
-	padding:@defaultSpacing;
+	padding:@defaultSpacing @defaultSpacing 70px;
 	img{
 		width: 40%;
 		height: auto;
 	}
+	h1{
+		font-size: 2.5rem;
+		padding: 10px 0;	
+	}
+	.love{
+		font-size: 1.3rem;
+		font-style: italic;
+	}
+	hr{
+		margin: 20px 0;
+	}
+	button{
+		padding: 1rem;
+		margin: 20px 0;
+		color: white;
+		border-radius: 5px;
+		background-color: #8b8c8e;
+		font-size: 1.3rem;
+	}
+
 }
