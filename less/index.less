@@ -1,6 +1,18 @@
 @import 'reset.less';
 
 @defaultSpacing: 30px;
+@border-radius: 15px;
+@default-text-color: black;
+@text-color: lighten(@default-text-color, 30%);
+@white: white;
+@article-color: darken(#f2f3f7, 10%);
+@anchor-color: darken(#f2f3f7, 50%);
+
+.flex-display(@justifyContent){
+	display: flex;
+	justify-content: @justifyContent;
+	flex-wrap: wrap;
+};
 
 /* Set every element's box-sizing to border-box */
 * {
@@ -11,13 +23,11 @@ html, body {
 	height: 100%;
 	max-width: 800px;
 	margin: 0 auto;
-	color: lighten(black, 30%);
+	color: @text-color;
 }
 
 nav ul{
-	display: flex;
-	justify-content: flex-end;
-
+	.flex-display(flex-end);
 	li{
 		margin: 30px 30px 10px;
 		font-size: 1.3rem;
@@ -28,6 +38,7 @@ nav ul{
 	background-color: #f2f3f7;
 	margin:@defaultSpacing;
 	padding:@defaultSpacing @defaultSpacing 70px;
+	border-radius: @border-radius;
 	img{
 		width: 40%;
 		height: auto;
@@ -46,10 +57,61 @@ nav ul{
 	button{
 		padding: 1rem;
 		margin: 20px 0;
-		color: white;
+		color: @white;
 		border-radius: 5px;
-		background-color: #8b8c8e;
+		background-color: darken(#f2f3f7, 50%);
 		font-size: 1.3rem;
 	}
 
+}
+
+#second-section{
+	padding: 10px @defaultSpacing;
+	width: 100%;
+	.flex-display(space-between);
+	article{
+		background-color: @article-color;
+		padding: 20px;
+		width: 47%;
+		line-height: 2rem;
+		margin-bottom: 30px;
+		border-radius: @border-radius;
+		box-shadow: 0 5px 10px #6c6c6d;
+
+		a{
+			color: @anchor-color;
+			text-decoration: none;
+			border-bottom: dashed 1px @default-text-color;
+		}
+		h3{
+			font-size: 1.5rem;
+			font-style: italic;
+			margin-bottom: 20px;
+		}
+		ul{
+			font-size: 1.2rem;
+			span{
+				padding-right: 20px;
+			}
+		}
+		details{
+			padding: 10px;
+			summary{
+				font-size: 1.2rem;
+			}
+			ul{
+				margin-left: 20px;
+				li .bold{
+					font-weight: bold;
+				}
+			}
+		}
+		
+	}
+}
+
+footer{
+	.flex-display(center);
+	font-size: 1.2rem;
+	padding-bottom: 20px;
 }
