@@ -1,1 +1,292 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #4d4d4d;
+}
+a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+nav ul li {
+  margin: 30px 30px 10px;
+  font-size: 1.3rem;
+}
+@media (max-width: 500px) {
+  nav ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+    order: 1;
+    border-bottom: #6c6c6d dashed 1px;
+    margin: 0 30px;
+  }
+}
+nav ul li a:hover {
+  background-color: #6c6c6d;
+  padding: 10px;
+  box-shadow: 0 5px 10px #939394;
+}
+#first-section {
+  background-color: #f2f3f7;
+  margin: 30px;
+  padding: 30px 30px 70px;
+  border-radius: 15px;
+}
+#first-section img {
+  width: 40%;
+  height: auto;
+}
+@media (max-width: 500px) {
+  #first-section img {
+    width: 100%;
+  }
+}
+#first-section h1 {
+  font-size: 2.5rem;
+  padding: 10px 0;
+}
+@media (max-width: 500px) {
+  #first-section h1 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+#first-section .love {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+@media (max-width: 500px) {
+  #first-section .love {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+#first-section hr {
+  margin: 20px 0;
+}
+#first-section a {
+  display: inline-block;
+  padding: 1rem;
+  margin: 20px 0;
+  color: white;
+  border-radius: 5px;
+  background-color: #596491;
+  font-size: 1.3rem;
+}
+@media (max-width: 500px) {
+  #first-section a {
+    font-size: 1rem;
+  }
+}
+#second-section {
+  padding: 10px 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  #second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+#second-section article {
+  background-color: #d2d6e4;
+  padding: 20px;
+  width: 47%;
+  line-height: 2rem;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px #6c6c6d;
+}
+@media (max-width: 500px) {
+  #second-section article {
+    width: 99%;
+  }
+}
+#second-section article a {
+  color: #596491;
+  text-decoration: none;
+  border-bottom: dashed 1px black;
+}
+#second-section article h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+#second-section article ul {
+  font-size: 1.2rem;
+}
+#second-section article ul span {
+  padding-right: 20px;
+}
+#second-section article details {
+  padding: 10px;
+}
+#second-section article details summary {
+  font-size: 1.2rem;
+}
+#second-section article details ul {
+  margin-left: 20px;
+}
+#second-section article details ul li .bold {
+  font-weight: bold;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}

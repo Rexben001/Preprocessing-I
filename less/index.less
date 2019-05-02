@@ -1,59 +1,173 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import "reset.less";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@defaultSpacing: 30px;
+@border-radius: 15px;
+@default-text-color: black;
+@text-color: lighten(@default-text-color, 30%);
+@white: white;
+@article-color: darken(#f2f3f7, 10%);
+@anchor-color: darken(#f2f3f7, 50%);
+@mobileScreen: 500px;
+
+
+.flex-display(@justifyContent) {
+  display: flex;
+  justify-content: @justifyContent;
+  flex-wrap: wrap;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.flex-display-mobile() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  color: @text-color;
 }
 
+a{
+	text-decoration: none;
+	color: @text-color;
+}
+
+nav ul {
+  .flex-display(flex-end);
+  @media (max-width: @mobileScreen) {
+	.flex-display-mobile();
+	  
+  }
+  li {
+    margin: 30px 30px 10px;
+	font-size: 1.3rem;
+	@media (max-width: @mobileScreen) {
+		.flex-display-mobile();
+        margin: 0;
+        padding: 10px;
+        align-items: center;
+		order: 1;
+		border-bottom: #6c6c6d dashed 1px;
+		margin: 0 30px;
+	  }
+	  a{
+		&:hover{
+			background-color: #6c6c6d;
+			padding: 10px;
+			box-shadow: 0 5px 10px #939394;
+		}
+	  }
+		 
+  }
+}
+
+#first-section {
+  background-color: #f2f3f7;
+  margin: @defaultSpacing;
+  padding: @defaultSpacing @defaultSpacing 70px;
+  border-radius: @border-radius;
+  img {
+    width: 40%;
+	height: auto;
+	@media (max-width: @mobileScreen) {
+		width: 100%;
+	  }
+  }
+  h1 {
+    font-size: 2.5rem;
+	padding: 10px 0;
+	@media (max-width: @mobileScreen) {
+		font-size: 1.25rem;
+		text-align: center;
+	  }
+  }
+  .love {
+    font-size: 1.3rem;
+	font-style: italic;
+	@media (max-width: @mobileScreen) {
+		font-size: 1rem;
+		text-align: center;
+
+	  }
+  }
+  hr {
+    margin: 20px 0;
+  }
+  a {
+	  display: inline-block;
+    padding: 1rem;
+    margin: 20px 0;
+    color: @white;
+    border-radius: 5px;
+    background-color: darken(#f2f3f7, 50%);
+	font-size: 1.3rem;
+	@media (max-width: @mobileScreen) {
+		font-size: 1rem;
+	  }
+  }
+}
+
+#second-section {
+  padding: 10px @defaultSpacing;
+  width: 100%;
+  .flex-display(space-between);
+  @media (max-width: @mobileScreen) {
+	.flex-display-mobile();
+	
+  }
+  article {
+    background-color: @article-color;
+    padding: 20px;
+    width: 47%;
+    line-height: 2rem;
+    margin-bottom: 30px;
+    border-radius: @border-radius;
+	box-shadow: 0 5px 10px #6c6c6d;
+	@media (max-width: @mobileScreen) {
+		width: 99%;
+	  }
+
+    a {
+      color: @anchor-color;
+      text-decoration: none;
+      border-bottom: dashed 1px @default-text-color;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    ul {
+      font-size: 1.2rem;
+      span {
+        padding-right: 20px;
+      }
+    }
+    details {
+      padding: 10px;
+      summary {
+        font-size: 1.2rem;
+      }
+      ul {
+        margin-left: 20px;
+        li .bold {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .flex-display(center);
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
